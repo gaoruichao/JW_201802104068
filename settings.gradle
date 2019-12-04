@@ -1,0 +1,4 @@
+rootProject.name = 'JW_201802104068'
+include 'JW_201802104068_31'
+findProject(':JW_201802104068_31')?.name = 'cat'
+
