@@ -18,7 +18,7 @@ public class Filter10_Session implements Filter {
         resp.setContentType("text/html;charset=UTF-8");
         HttpServletRequest request = (HttpServletRequest)req;
         String path= request.getRequestURI();
-        if (path.contains("/login") || path.contains("/mySchool")){
+        if (path.contains("/login") || path.contains("/mySchool") || path.contains("/GetSession") || path.contains("/ShowCookies")){
             System.out.println("不对该页面进行验证");
         }else {
             //创建JSON对象message，以便往前端响应信息

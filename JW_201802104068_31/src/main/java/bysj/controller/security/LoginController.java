@@ -29,8 +29,8 @@ public class LoginController extends HttpServlet {
             if(loggedUser != null){
                 message.put("message", "登录成功");
                 HttpSession session = request.getSession();
-                //10分钟没有操作，则使session失效
-                session.setMaxInactiveInterval(10 * 60);
+                //10秒钟没有操作，则使session失效
+                session.setMaxInactiveInterval(40);
                 session.setAttribute("currentUser",loggedUser);
                 response.getWriter().println(message);
                 //此处应重定向到索引页（菜单页）
@@ -44,6 +44,6 @@ public class LoginController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.doPost(request, response);
     }
 }
